@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: steelblue;
+}
+
+.container {
+  width: 300px;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #FFF;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+h1 {
+  margin: 10px;
+}
+
+form {
+  width: 100%;
+  padding: 10px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-control {
+  width: 100%;
+  height: 60px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.form-control input {
+  width: 100%;
+  height: 45px;
+  background-color: transparent;
+  border-style: none;
+  border-bottom: #FFF solid 2px;
+  padding: 8px 0;
+  outline: none;
+  caret-color: #FFF;
+}
+
+.form-control label {
+  position: absolute;
+  left: 0;
+}
+
+.form-control label span {
+  display: inline-block;
+  transition: all 0.3s ease;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* cubic-bezier(x1,y1,x2,y2) 贝塞尔曲线的两个控制点*/
+  /* 这里的动画曲线让运动有弹跳感 */
+}
+
+.form-control input:focus + label span {
+  color: lightblue;
+  transform: translateY(-20px);
+}
+
+.btn {
+  width: 80%;
+  height: 40px;
+  margin: 20px 0;
+  background-color: lightblue;
+  border: 0;
+  border-radius: 5px;
+}
+
+p.text {
+  width: 100%;
+  text-align: justify;
+}
+
+p a {
+  color: lightblue;
+  text-decoration: none;
+}

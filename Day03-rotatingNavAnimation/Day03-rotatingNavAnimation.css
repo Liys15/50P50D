@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #555;
+  color: #222;
+  margin: 0;
+}
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left; /*更改页面旋转的原点*/
+  transition: transform 500ms linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg); /*实现页面旋转效果*/
+}
+
+/* CSS选择器种的+表示选择相邻兄弟
+本处代表选择紧接在.container.show-nav元素后面的nav li */
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 300ms;
+}
+
+/*打开导航栏后,整个container已经旋转了20°,
+只需要让左上角圆圈再逆时针旋转70°即可实现垂直的两个button转换*/
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 500ms linear;
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  border: 0;
+  background: transparent;
+  font-size: 26px;
+  color: #fff;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform-origin: top left;
+  transform: rotate(90deg);
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 400ms ease-in;
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+nav a {
+  color: #fafafa;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #ff7979;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px 0;
+}

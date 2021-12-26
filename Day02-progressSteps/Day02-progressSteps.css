@@ -1,0 +1,85 @@
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+    --circle-size: 40;
+} /*定义颜色*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.containter {
+    text-align: center;
+    position: relative;
+}
+
+.progress-containter {
+    display: flex;
+    justify-content: space-between; /*注意evenly和between的区别*/
+    align-items: center;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-containter::before {
+    content: '';
+    background-color: var(--line-border-empty);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: -1;
+}
+
+.progress {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    z-index: -1;
+    transition: width 500ms ease-in-out;
+}
+
+.circle {
+    background-color: #fff;
+    height: calc(var(--circle-size)*1px); /*根据定义的数值类型变量设置样式*/
+    width: calc(var(--circle-size)*1px);
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--line-border-empty);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 500ms ease-in-out;
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+    transition: border-color 500ms ease-in-out;
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: #fff;
+    width: calc(var(--circle-size)*2px);
+    height: calc(var(--circle-size)*0.8px);
+    margin: 20px 20px 0 20px;
+    padding: 0;
+    border-width: 0;
+    border-radius: 10px;
+}
+.btn:disabled {
+    /*灰色按钮样式*/
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+  }

@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden; /*隐藏下面的box，防止出现横向滚动条*/
+  margin: 20px 0;
+  background-color: antiquewhite;
+}
+
+.box {
+  width: 400px;
+  height: 260px;
+  margin: 20px 0;
+  background-color: #7979FF;
+  border-radius: 10px;
+  transition: transform 700ms ease;
+}
+
+.box:nth-child(even) {
+  transform: translateX(calc(-50vw - 200px));
+}
+
+.box:nth-child(odd) {
+  transform: translateX(calc(50vw + 200px));
+}
+
+.box:nth-child(even).show {
+  transform: translateX(0);
+}
+
+.box:nth-child(odd).show {
+  transform: translateX(0);
+}
