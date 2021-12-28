@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #DDD;
+    margin: 0 auto;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Muli', sans-serif;
+}
+
+nav::before {
+    content: '';
+    background-color: #eafbff;
+    height: 50vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+nav::after {
+    content: '';
+    background-color: #5290f9;
+    height: 50vh;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+}
+
+nav {
+    background-color: #FFF;
+    width: 90px;
+    height: 70px;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    transition: 1000ms ease;
+}
+
+nav.active {
+    width: 350px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 0;
+    transition: 1000ms ease;
+}
+
+nav.active ul {
+    width: 100%;
+    padding: 0;
+    transition: 1000ms ease;
+}
+
+li {
+    margin: 0;
+    opacity: 0;
+    transition: 1000ms ease;
+}
+
+nav.active li {
+    opacity: 1;
+    transform: rotateY(360deg);
+    transition: 1000ms ease;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    margin: 0 10px;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    min-width: 20px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background-color: #5290f9;
+    transition: all 1000ms ease;
+}
+
+.line1 {
+    top: 12px;
+}
+
+.line2 {
+    top: 18px;
+}
+
+nav.active .line1 {
+    transform-origin: center;
+    transform: rotate(225deg) translateY(-4px);
+}
+
+nav.active .line2 {
+    transform-origin: center;
+    transform: rotate(-225deg) translateY(4px);
+}
