@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+}
+
+.nums {
+    height: 80px;
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nums span {
+    color: #039be5;
+    text-align: center;
+    width: 100%;
+    font-size: 60px;
+    position: absolute;
+    visibility: hidden;
+    transform-origin: bottom center;
+    transform: rotate(180deg);
+}
+
+.nums span.in {
+    visibility: visible;
+    animation: countdown 1s ease-in-out forwards;
+}
+
+@keyframes countdown {
+    0% {
+        transform: rotate(180deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-180deg);
+    }
+}
+
+h4 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.final {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    font-family: inherit;
+}
+
+.final.show {
+    animation: show 0.2s linear forwards;
+}
+
+@keyframes show {
+    0% {
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#replay {
+    border: none;
+    border-radius: 3px;
+    padding: 6px ;
+    color: #fff;
+    background-color: #039be5;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+#replay span {
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+#replay span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#replay:hover span {
+    padding-right: 20px;
+}
+
+#replay:hover span:after {
+    right: 0;
+    opacity: 1;
+}
