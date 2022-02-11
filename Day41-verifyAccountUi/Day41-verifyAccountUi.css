@@ -1,0 +1,67 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 640px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.code-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.code {
+    height: 120px;
+    width: 80px;
+    margin: 15px 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    text-align: center;
+    /* input内的光标控制 */
+    caret-color: transparent;
+    font-size: 75px;
+    -moz-appearance: textfield;
+}
+
+/* 隐藏input type=number组件旁边的按钮 */
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.code:valid {
+    border-color: #3498db;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+    background-color: #eee;
+    color: #777;
+    border-radius: 4px;
+    margin: 15px 80px 5px 80px;
+    padding: 16px 8px;
+    line-height: 20px;
+    text-align: center;
+}
+
