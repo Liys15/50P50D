@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+button {
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+button.nav-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    width: 35px;
+    height: 35px;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out 0.4s;
+}
+
+.nav-container .black {
+    background-color: black;
+    position: absolute;
+    width: 400px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out 0.4s;
+}
+
+.nav-container .red {
+    background-color: red;
+    position: absolute;
+    width: 380px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out 0.2s;
+}
+
+.nav-container .white {
+    background-color: #fff;
+    position: absolute;
+    width: 360px;
+    height: 100vh;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out 0.0s;
+}
+
+.nav-container.visible {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out 0.0s;
+}
+
+.nav-container.visible .black {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out 0.0s;
+}
+
+.nav-container.visible .red {
+    transform: translateX(0);
+    transition: transform 0.2s ease-in-out 0.2s;
+}
+
+.nav-container.visible .white {
+    transform: translateX(0);
+    transition: transform 0.2s ease-in-out 0.4s;
+}
+
+.nav-container button.nav-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 50px 20px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 100px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content p {
+    text-align: center;
+    font-size: 18px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 20px 0;
+}
+
+ul li a {
+    color: rgb(34, 31, 31);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.list ul {
+    padding-left: 20px;
+}
